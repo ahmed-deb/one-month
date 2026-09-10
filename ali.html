@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ali.exe - Love Mail System v1.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- CRT scanline + flicker overlay -->
+    <div class="crt-overlay"></div>
+    <div class="vignette"></div>
+
+    <!-- Retro grid floor background -->
+    <div class="grid-floor"></div>
+    <div class="retro-sun"></div>
+
+    <!-- Floating pixel hearts spawn here via JS -->
+    <div id="hearts-bg"></div>
+
+    <!-- Top marquee -->
+    <div class="marquee-bar">
+      <div class="marquee-text">
+        💌 LOVE MAIL SYSTEM v1.0 &nbsp;·&nbsp; ONE MONTH ANNIVERSARY EDITION
+        &nbsp;·&nbsp; AUG 11 — SEP 11 &nbsp;·&nbsp; 💌 LOVE MAIL SYSTEM v1.0
+        &nbsp;·&nbsp; ONE MONTH ANNIVERSARY EDITION &nbsp;·&nbsp;
+      </div>
+    </div>
+
+    <div class="screen-wrap">
+      <!-- Retro window -->
+      <div class="window" id="window">
+        <div class="title-bar">
+          <span class="title-text">💾 ali.exe</span>
+          <div class="win-buttons">
+            <span class="win-btn">_</span>
+            <span class="win-btn">□</span>
+            <span class="win-btn">×</span>
+          </div>
+        </div>
+
+        <div class="window-body">
+          <!-- STAGE 1: envelope / boot screen -->
+          <div id="stage-envelope" class="stage active-stage">
+            <div class="pixel-envelope" id="pixel-envelope">
+              <div class="envelope-flap"></div>
+              <div class="envelope-body"></div>
+              <div class="envelope-heart">♥</div>
+            </div>
+            <p class="blink-text">&gt; CLICK ENVELOPE TO OPEN_</p>
+          </div>
+
+          <!-- STAGE 2: loading bar -->
+          <div id="stage-loading" class="stage">
+            <p class="loading-label">
+              LOADING LOVE.DAT<span class="dots">...</span>
+            </p>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="loading-percent" id="loading-percent">0%</p>
+          </div>
+
+          <!-- STAGE 3: letter -->
+          <div id="stage-letter" class="stage">
+            <h1 class="glitch-title" data-text="HAPPY ONE MONTH">
+              HAPPY ONE MONTH
+            </h1>
+            <p class="date-line">08.11 ── ♥ ── 09.11</p>
+
+            <div class="letter-text" id="letter-text">
+              <!-- ✏️ EDIT YOUR LETTER TEXT IN script.js (LETTER_LINES array) -->
+            </div>
+            <span class="type-cursor" id="type-cursor">▌</span>
+
+            <div class="signature" id="signature">— yours always, Ahmed</div>
+
+            <button id="close-btn" class="retro-btn">[ CLOSE ]</button>
+          </div>
+        </div>
+
+        <div class="status-bar">
+          <span>SYSTEM: OK</span>
+          <span id="status-msg">READY</span>
+          <span>♥ x∞</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Retro boombox footer -->
+    <div class="boombox-note">📼 press the envelope, cutie</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
